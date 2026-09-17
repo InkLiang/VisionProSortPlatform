@@ -78,7 +78,6 @@ namespace VisionProSortPlatform.Forms
                 button2.Enabled = true;
                 button3.Enabled = true;
                 button5.Enabled = true;
-                MessageBox.Show(CameraManager.Connect().ToString());
                 MessageBox.Show("相机连接成功：" + CameraManager.Grabber.Name);
             }
             else
@@ -87,7 +86,6 @@ namespace VisionProSortPlatform.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            
         }
 
         private void DisconnectCamera()
@@ -130,32 +128,23 @@ namespace VisionProSortPlatform.Forms
             }
             StopPreview(); // 若正在预览，先停止
 
-            isSingleShot = true;                            // 拍一帧后自动停止
-            CameraManager.Acq.Complete -= Acq_Complete;     // 防重复绑定
-            CameraManager.Acq.Complete += Acq_Complete;     // 绑定采集完成事件
-            CameraManager.StartCapture();
-        }
-        /// <summary>采集完成回调（参照PDF例1）：取图并显示</summary>
-        private void Acq_Complete(object sender, CogCompleteEventArgs e)
-        {
-            ICogAcqFifo acq = sender as ICogAcqFifo;
-            acq.GetFifoState(out int _, out int ReadyNum, out bool _);
-            if (ReadyNum > 0)
+            // 单帧采集：拍完一帧自动停，取到的图显示到预览区
+            CameraManager.CaptureOnce(img =>
             {
-                // 获取图像
-                ICogImage Img = acq.CompleteAcquireEx(new CogAcqInfo());
+                if (img != null)
+                    cogRecordDisplay2.Image = img;   // 单次拍照结果显示
+                try
+                {
+                    object count = CameraManager.RunVpp(img);   // 2. 跑VPP检测
+                    MessageBox.Show("检测结果 Count = " + count); // 3. 弹窗看结果
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("检测异常：" + ex.Message);   // 出问题能看到具体原因
+                }
+            });
              
-                cogRecordDisplay2.Image = Img;
             }
-
-            if (isSingleShot) // 单次拍照：取完一帧自动停止
-            {
-                isSingleShot = false;
-                acq.Complete -= Acq_Complete;
-                CameraManager.StopCapture(); // Acq.Flush
-            }
-        }
-
 
         // ============ VPP方案 ============
 
@@ -168,7 +157,15 @@ namespace VisionProSortPlatform.Forms
                 OFD.InitialDirectory = Application.StartupPath;
                 if (OFD.ShowDialog() == DialogResult.OK)
                 {
-                    textBox1.Text = OFD.FileName;
+                    VppPath = OFD.FileName;
+                    if (CameraManager.LoadVpp(VppPath, out string err))   
+                    {
+                        textBox1.Text = VppPath;
+                    }
+                    else
+                    {
+                        MessageBox.Show("加载失败：" + err);
+                    }
                 }
                 else
                 {
