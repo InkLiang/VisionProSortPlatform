@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E3A5F"/>
+      <stop offset="1" stop-color="#2E6DB4"/>
+    </linearGradient>
+    <linearGradient id="cam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A4359"/>
+      <stop offset="1" stop-color="#101E2B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 标题栏 -->
+  <rect x="0" y="0" width="1200" height="56" fill="url(#hdr)"/>
+  <circle cx="30" cy="28" r="6" fill="#5BC0BE"/>
+  <text x="50" y="36" fill="#FFFFFF" font-size="19" font-weight="600">工业视觉分拣系统</text>
+  <text x="1120" y="35" fill="#CFE0F2" font-size="15" text-anchor="end">视觉配置页</text>
+
+  <!-- 导航栏 -->
+  <rect x="0" y="56" width="1200" height="44" fill="#FFFFFF"/>
+  <rect x="20" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="79" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">主运行页</text>
+  <rect x="148" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="207" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">设备调试</text>
+  <rect x="276" y="62" width="118" height="32" rx="6" fill="#2E6DB4"/>
+  <text x="335" y="83" fill="#FFFFFF" font-size="14" text-anchor="middle">视觉配置</text>
+  <rect x="404" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="463" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">数据日志</text>
+  <rect x="532" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="591" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">系统设置</text>
+  <line x1="0" y1="99" x2="1200" y2="99" stroke="#D8DEE4" stroke-width="1"/>
+
+  <!-- 左上：相机设置 -->
+  <rect x="20" y="112" width="580" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="40" y="141" fill="#1A2B3C" font-size="15" font-weight="600">相机设置</text>
+  <rect x="312" y="156" width="268" height="26" rx="6" fill="#EDF1F5"/>
+  <text x="322" y="174" fill="#1A2B3C" font-size="13" font-weight="600">实时预览</text>
+  <rect x="312" y="180" width="268" height="30" rx="6" fill="#2E6DB4"/>
+  <text x="446" y="200" fill="#FFFFFF" font-size="13" text-anchor="middle">连接相机</text>
+  <rect x="312" y="216" width="268" height="30" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="446" y="236" fill="#1A2B3C" font-size="13" text-anchor="middle">断开相机</text>
+  <rect x="312" y="252" width="268" height="30" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="446" y="272" fill="#1A2B3C" font-size="13" text-anchor="middle">单次拍照</text>
+  <rect x="312" y="300" width="44" height="26" rx="5" fill="#EDF1F5"/>
+  <text x="334" y="317" fill="#5A6B7C" font-size="12" text-anchor="middle">曝光</text>
+  <rect x="360" y="300" width="96" height="26" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="408" y="317" fill="#1A2B3C" font-size="12" text-anchor="middle">5000 µs</text>
+  <rect x="470" y="300" width="44" height="26" rx="5" fill="#EDF1F5"/>
+  <text x="492" y="317" fill="#5A6B7C" font-size="12" text-anchor="middle">增益</text>
+  <rect x="518" y="300" width="62" height="26" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="549" y="317" fill="#1A2B3C" font-size="12" text-anchor="middle">8.0 dB</text>
+  <rect x="312" y="342" width="64" height="26" rx="5" fill="#EDF1F5"/>
+  <text x="344" y="359" fill="#5A6B7C" font-size="12" text-anchor="middle">触发模式</text>
+  <rect x="380" y="342" width="150" height="26" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="455" y="359" fill="#1A2B3C" font-size="12" text-anchor="middle">软触发（软件）</text>
+  <rect x="36" y="150" width="280" height="214" rx="8" fill="url(#cam)"/>
+  <line x1="176" y1="160" x2="176" y2="354" stroke="#8FD0F0" stroke-width="1" opacity="0.4"/>
+  <line x1="50" y1="257" x2="300" y2="257" stroke="#8FD0F0" stroke-width="1" opacity="0.4"/>
+  <rect x="120" y="220" width="112" height="76" rx="8" fill="#4A6478"/>
+  <rect x="112" y="212" width="128" height="92" fill="none" stroke="#52E0A0" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="176" y="350" fill="#B8CCDC" font-size="11" text-anchor="middle">预览中 · 相机1</text>
+
+  <!-- 右上：VPP 方案 -->
+  <rect x="612" y="112" width="568" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="632" y="141" fill="#1A2B3C" font-size="15" font-weight="600">VPP 方案</text>
+  <rect x="632" y="150" width="150" height="34" rx="6" fill="#2E6DB4"/>
+  <text x="707" y="172" fill="#FFFFFF" font-size="13" text-anchor="middle">加载 VPP 方案</text>
+  <rect x="792" y="150" width="130" height="34" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="857" y="172" fill="#1A2B3C" font-size="13" text-anchor="middle">保存方案</text>
+  <rect x="932" y="150" width="130" height="34" rx="6" fill="#2E9E5B"/>
+  <text x="997" y="172" fill="#FFFFFF" font-size="13" text-anchor="middle">测试运行</text>
+  <text x="632" y="222" fill="#5A6B7C" font-size="12">当前 VPP 路径</text>
+  <rect x="632" y="232" width="528" height="30" rx="6" fill="#F7F9FB" stroke="#C4CFDA"/>
+  <text x="650" y="252" fill="#1A2B3C" font-size="12.5">D:\vision\schemes\vision_sort.vpp</text>
+  <text x="632" y="300" fill="#1A2B3C" font-size="13" font-weight="600">方案工具链</text>
+  <rect x="632" y="316" width="130" height="44" rx="8" fill="#EDF1F5"/>
+  <text x="697" y="336" fill="#1A2B3C" font-size="12" text-anchor="middle">采集</text>
+  <text x="697" y="352" fill="#5A6B7C" font-size="10.5" text-anchor="middle">AcqFifo</text>
+  <path d="M 766 338 L 776 338 L 776 335 L 786 338 L 776 341 L 776 338 Z" fill="#B4C1CE"/>
+  <rect x="790" y="316" width="130" height="44" rx="8" fill="#EDF1F5"/>
+  <text x="855" y="336" fill="#1A2B3C" font-size="12" text-anchor="middle">模板匹配</text>
+  <text x="855" y="352" fill="#5A6B7C" font-size="10.5" text-anchor="middle">PMAlign</text>
+  <path d="M 924 338 L 934 338 L 934 335 L 944 338 L 934 341 L 934 338 Z" fill="#B4C1CE"/>
+  <rect x="948" y="316" width="130" height="44" rx="8" fill="#EDF1F5"/>
+  <text x="1013" y="336" fill="#1A2B3C" font-size="12" text-anchor="middle">结果输出</text>
+  <text x="1013" y="352" fill="#5A6B7C" font-size="10.5" text-anchor="middle">OK / NG</text>
+
+  <!-- 左下：PMA 模板训练 -->
+  <rect x="20" y="394" width="580" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="40" y="423" fill="#1A2B3C" font-size="15" font-weight="600">PMA 模板训练</text>
+  <text x="312" y="452" fill="#1A2B3C" font-size="13" font-weight="600">模板操作</text>
+  <rect x="312" y="462" width="268" height="30" rx="6" fill="#2E6DB4"/>
+  <text x="446" y="482" fill="#FFFFFF" font-size="13" text-anchor="middle">采集训练图</text>
+  <rect x="312" y="498" width="268" height="30" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="446" y="518" fill="#1A2B3C" font-size="13" text-anchor="middle">训练模板</text>
+  <rect x="312" y="534" width="268" height="30" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="446" y="554" fill="#1A2B3C" font-size="13" text-anchor="middle">保存模板</text>
+  <text x="312" y="596" fill="#5A6B7C" font-size="12">匹配阈值</text>
+  <rect x="382" y="582" width="110" height="6" rx="3" fill="#D8DEE4"/>
+  <rect x="382" y="582" width="77" height="6" rx="3" fill="#2E6DB4"/>
+  <circle cx="459" cy="585" r="8" fill="#FFFFFF" stroke="#2E6DB4" stroke-width="2"/>
+  <text x="502" y="590" fill="#1A2B3C" font-size="13" font-weight="600">70.0%</text>
+  <text x="312" y="632" fill="#5A6B7C" font-size="12">角度范围</text>
+  <text x="390" y="632" fill="#1A2B3C" font-size="12.5">± 30°</text>
+  <text x="468" y="632" fill="#2E9E5B" font-size="12">模板已训练 ✓</text>
+  <rect x="36" y="432" width="260" height="170" rx="8" fill="url(#cam)"/>
+  <rect x="80" y="490" width="120" height="80" rx="8" fill="#4A6478"/>
+  <rect x="72" y="482" width="136" height="96" fill="none" stroke="#52E0A0" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="166" y="576" fill="#B8CCDC" font-size="11" text-anchor="middle">模板A 区域</text>
+
+  <!-- 右下：图像保存配置 -->
+  <rect x="612" y="394" width="568" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="632" y="423" fill="#1A2B3C" font-size="15" font-weight="600">图像保存配置</text>
+  <text x="632" y="462" fill="#1A2B3C" font-size="13">自动保存</text>
+  <rect x="706" y="448" width="18" height="18" rx="4" fill="#2E6DB4"/>
+  <path d="M 710 457 L 714 461 L 721 452" fill="none" stroke="#FFFFFF" stroke-width="2.2"/>
+  <text x="732" y="463" fill="#1A2B3C" font-size="12.5">OK 图</text>
+  <rect x="792" y="448" width="18" height="18" rx="4" fill="#2E6DB4"/>
+  <path d="M 796 457 L 800 461 L 807 452" fill="none" stroke="#FFFFFF" stroke-width="2.2"/>
+  <text x="818" y="463" fill="#1A2B3C" font-size="12.5">NG 图</text>
+  <text x="632" y="516" fill="#1A2B3C" font-size="13" font-weight="600">保存路径</text>
+  <rect x="632" y="528" width="400" height="30" rx="6" fill="#F7F9FB" stroke="#C4CFDA"/>
+  <text x="650" y="548" fill="#1A2B3C" font-size="12.5">D:\images\2026-09-15</text>
+  <rect x="1044" y="528" width="116" height="30" rx="6" fill="#2E6DB4"/>
+  <text x="1102" y="548" fill="#FFFFFF" font-size="13" text-anchor="middle">选择路径</text>
+  <text x="632" y="600" fill="#5A6B7C" font-size="12">文件命名：时间戳_工件号_OK.png / _NG.png</text>
+  <text x="632" y="630" fill="#5A6B7C" font-size="12">磁盘空间：D 盘剩余 128 GB</text>
+
+  <!-- 底部工具链状态条 -->
+  <rect x="20" y="680" width="1160" height="34" rx="8" fill="#F0F6FF" stroke="#C9DCF2"/>
+  <circle cx="48" cy="697" r="5" fill="#2E9E5B"/>
+  <text x="64" y="702" fill="#1A2B3C" font-size="12.5">相机在线</text>
+  <circle cx="180" cy="697" r="5" fill="#2E9E5B"/>
+  <text x="196" y="702" fill="#1A2B3C" font-size="12.5">VPP 已加载 vision_sort.vpp</text>
+  <circle cx="430" cy="697" r="5" fill="#2E9E5B"/>
+  <text x="446" y="702" fill="#1A2B3C" font-size="12.5">模板已训练（模板A）</text>
+  <circle cx="650" cy="697" r="5" fill="#2E9E5B"/>
+  <text x="666" y="702" fill="#1A2B3C" font-size="12.5">图像保存已启用</text>
+
+  <!-- 底部状态栏 -->
+  <rect x="0" y="720" width="1200" height="40" fill="#1E3A5F"/>
+  <circle cx="28" cy="740" r="4" fill="#52E0A0"/>
+  <text x="42" y="745" fill="#AFC6DD" font-size="12">系统运行中</text>
+  <text x="196" y="745" fill="#AFC6DD" font-size="12">相机在线</text>
+  <text x="330" y="745" fill="#AFC6DD" font-size="12">机械臂空闲</text>
+  <text x="464" y="745" fill="#AFC6DD" font-size="12">传送带运行</text>
+  <text x="608" y="745" fill="#AFC6DD" font-size="12">IO 正常</text>
+  <text x="1120" y="745" fill="#AFC6DD" font-size="12" text-anchor="end">2026-09-15 15:00:00</text>
+</svg>

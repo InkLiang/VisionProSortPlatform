@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E3A5F"/>
+      <stop offset="1" stop-color="#2E6DB4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 标题栏 -->
+  <rect x="0" y="0" width="1200" height="56" fill="url(#hdr)"/>
+  <circle cx="30" cy="28" r="6" fill="#5BC0BE"/>
+  <text x="50" y="36" fill="#FFFFFF" font-size="19" font-weight="600">工业视觉分拣系统</text>
+  <text x="1120" y="35" fill="#CFE0F2" font-size="15" text-anchor="end">系统设置页</text>
+
+  <!-- 导航栏 -->
+  <rect x="0" y="56" width="1200" height="44" fill="#FFFFFF"/>
+  <rect x="20" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="79" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">主运行页</text>
+  <rect x="148" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="207" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">设备调试</text>
+  <rect x="276" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="335" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">视觉配置</text>
+  <rect x="404" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="463" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">数据日志</text>
+  <rect x="532" y="62" width="118" height="32" rx="6" fill="#2E6DB4"/>
+  <text x="591" y="83" fill="#FFFFFF" font-size="14" text-anchor="middle">系统设置</text>
+  <line x1="0" y1="99" x2="1200" y2="99" stroke="#D8DEE4" stroke-width="1"/>
+
+  <!-- 左上：Modbus 传送带配置 -->
+  <rect x="20" y="112" width="580" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="40" y="141" fill="#1A2B3C" font-size="15" font-weight="600">Modbus 传送带配置</text>
+  <rect x="40" y="156" width="80" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="80" y="175" fill="#5A6B7C" font-size="12" text-anchor="middle">协议</text>
+  <rect x="124" y="156" width="170" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="209" y="175" fill="#1A2B3C" font-size="12" text-anchor="middle">Modbus TCP ▾</text>
+  <rect x="40" y="200" width="80" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="80" y="219" fill="#5A6B7C" font-size="12" text-anchor="middle">IP 地址</text>
+  <rect x="124" y="200" width="170" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="209" y="219" fill="#1A2B3C" font-size="12" text-anchor="middle">192.168.1.10</text>
+  <rect x="40" y="244" width="80" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="80" y="263" fill="#5A6B7C" font-size="12" text-anchor="middle">端口</text>
+  <rect x="124" y="244" width="100" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="174" y="263" fill="#1A2B3C" font-size="12" text-anchor="middle">502</text>
+  <rect x="240" y="244" width="90" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="285" y="263" fill="#5A6B7C" font-size="12" text-anchor="middle">从站号</text>
+  <rect x="334" y="244" width="80" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="374" y="263" fill="#1A2B3C" font-size="12" text-anchor="middle">1</text>
+  <text x="40" y="308" fill="#1A2B3C" font-size="13" font-weight="600">寄存器映射</text>
+  <text x="40" y="336" fill="#5A6B7C" font-size="12">启停寄存器：Holding 40001（1=运行 0=停止）</text>
+  <text x="40" y="360" fill="#5A6B7C" font-size="12">速度寄存器：Holding 40002（0~100）</text>
+  <text x="40" y="384" fill="#5A6B7C" font-size="12">状态寄存器：Holding 40003（bit0 运行 / bit1 故障）</text>
+
+  <!-- 右上：机械臂配置 -->
+  <rect x="612" y="112" width="568" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="632" y="141" fill="#1A2B3C" font-size="15" font-weight="600">机械臂配置</text>
+  <rect x="632" y="156" width="90" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="677" y="175" fill="#5A6B7C" font-size="12" text-anchor="middle">机械臂 IP</text>
+  <rect x="726" y="156" width="170" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="811" y="175" fill="#1A2B3C" font-size="12" text-anchor="middle">192.168.1.20</text>
+  <rect x="632" y="200" width="90" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="677" y="219" fill="#5A6B7C" font-size="12" text-anchor="middle">端口</text>
+  <rect x="726" y="200" width="110" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="781" y="219" fill="#1A2B3C" font-size="12" text-anchor="middle">8080</text>
+  <rect x="852" y="200" width="100" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="902" y="219" fill="#5A6B7C" font-size="12" text-anchor="middle">动作速度</text>
+  <rect x="956" y="200" width="110" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="1011" y="219" fill="#1A2B3C" font-size="12" text-anchor="middle">300 mm/s</text>
+  <rect x="632" y="244" width="90" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="677" y="263" fill="#5A6B7C" font-size="12" text-anchor="middle">抓取延时</text>
+  <rect x="726" y="244" width="110" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="781" y="263" fill="#1A2B3C" font-size="12" text-anchor="middle">300 ms</text>
+  <rect x="852" y="244" width="100" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="902" y="263" fill="#5A6B7C" font-size="12" text-anchor="middle">复位延时</text>
+  <rect x="956" y="244" width="110" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="1011" y="263" fill="#1A2B3C" font-size="12" text-anchor="middle">500 ms</text>
+  <text x="632" y="308" fill="#1A2B3C" font-size="13" font-weight="600">分拣坐标</text>
+  <text x="632" y="336" fill="#5A6B7C" font-size="12">OK 区坐标：(320, 88, 240)</text>
+  <text x="632" y="360" fill="#5A6B7C" font-size="12">NG 区坐标：(520, 88, 240)</text>
+  <text x="632" y="384" fill="#9AA7B5" font-size="11.5">提示：坐标可在设备调试页用定点运动示教后填入</text>
+
+  <!-- 左下：视觉工艺参数 -->
+  <rect x="20" y="394" width="580" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="40" y="423" fill="#1A2B3C" font-size="15" font-weight="600">视觉工艺参数</text>
+  <rect x="40" y="438" width="140" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="110" y="457" fill="#5A6B7C" font-size="12" text-anchor="middle">光电触发后停机延时</text>
+  <rect x="184" y="438" width="110" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="239" y="457" fill="#1A2B3C" font-size="12" text-anchor="middle">200 ms</text>
+  <rect x="40" y="482" width="140" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="110" y="501" fill="#5A6B7C" font-size="12" text-anchor="middle">拍照等待时间</text>
+  <rect x="184" y="482" width="110" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="239" y="501" fill="#1A2B3C" font-size="12" text-anchor="middle">100 ms</text>
+  <rect x="40" y="526" width="140" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="110" y="545" fill="#5A6B7C" font-size="12" text-anchor="middle">缺料超时报警</text>
+  <rect x="184" y="526" width="110" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="239" y="545" fill="#1A2B3C" font-size="12" text-anchor="middle">5000 ms</text>
+  <text x="40" y="592" fill="#1A2B3C" font-size="13" font-weight="600">关联说明</text>
+  <text x="40" y="620" fill="#5A6B7C" font-size="12">匹配阈值 / 角度范围 → 在视觉配置页模板中设置</text>
+  <text x="40" y="644" fill="#5A6B7C" font-size="12">曝光 / 增益 → 在视觉配置页相机设置中调整</text>
+
+  <!-- 右下：数据库配置 -->
+  <rect x="612" y="394" width="568" height="270" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="632" y="423" fill="#1A2B3C" font-size="15" font-weight="600">数据库配置</text>
+  <rect x="632" y="438" width="90" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="677" y="457" fill="#5A6B7C" font-size="12" text-anchor="middle">数据库类型</text>
+  <rect x="726" y="438" width="170" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="811" y="457" fill="#1A2B3C" font-size="12" text-anchor="middle">SQLite ▾</text>
+  <rect x="632" y="482" width="90" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="677" y="501" fill="#5A6B7C" font-size="12" text-anchor="middle">数据库文件</text>
+  <rect x="726" y="482" width="320" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="740" y="501" fill="#1A2B3C" font-size="12">D:\data\vision.db</text>
+  <rect x="632" y="526" width="90" height="28" rx="5" fill="#EDF1F5"/>
+  <text x="677" y="545" fill="#5A6B7C" font-size="12" text-anchor="middle">连接字符串</text>
+  <rect x="726" y="526" width="320" height="28" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="740" y="545" fill="#1A2B3C" font-size="12">Data Source=vision.db</text>
+  <rect x="632" y="574" width="120" height="32" rx="6" fill="#2E6DB4"/>
+  <text x="692" y="594" fill="#FFFFFF" font-size="13" text-anchor="middle">测试连接</text>
+  <circle cx="790" cy="590" r="5" fill="#2E9E5B"/>
+  <text x="806" y="595" fill="#2E9E5B" font-size="12.5">连接成功</text>
+  <text x="632" y="640" fill="#5A6B7C" font-size="12">数据表：检测记录 / 报警记录 / 操作记录</text>
+  <text x="632" y="662" fill="#5A6B7C" font-size="12">自动备份：每天 00:00</text>
+
+  <!-- 底部按钮条 -->
+  <rect x="20" y="680" width="1160" height="34" rx="8" fill="#F0F6FF" stroke="#C9DCF2"/>
+  <rect x="360" y="685" width="140" height="24" rx="6" fill="#2E6DB4"/>
+  <text x="430" y="702" fill="#FFFFFF" font-size="12.5" text-anchor="middle">保存参数</text>
+  <rect x="510" y="685" width="140" height="24" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="580" y="702" fill="#1A2B3C" font-size="12.5" text-anchor="middle">加载参数</text>
+  <rect x="660" y="685" width="140" height="24" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="730" y="702" fill="#1A2B3C" font-size="12.5" text-anchor="middle">恢复默认</text>
+
+  <!-- 底部状态栏 -->
+  <rect x="0" y="720" width="1200" height="40" fill="#1E3A5F"/>
+  <circle cx="28" cy="740" r="4" fill="#52E0A0"/>
+  <text x="42" y="745" fill="#AFC6DD" font-size="12">系统运行中</text>
+  <text x="196" y="745" fill="#AFC6DD" font-size="12">相机在线</text>
+  <text x="330" y="745" fill="#AFC6DD" font-size="12">机械臂空闲</text>
+  <text x="464" y="745" fill="#AFC6DD" font-size="12">传送带运行</text>
+  <text x="608" y="745" fill="#AFC6DD" font-size="12">IO 正常</text>
+  <text x="1120" y="745" fill="#AFC6DD" font-size="12" text-anchor="end">2026-09-15 15:00:00</text>
+</svg>

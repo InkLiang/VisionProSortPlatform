@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E3A5F"/>
+      <stop offset="1" stop-color="#2E6DB4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 标题栏 -->
+  <rect x="0" y="0" width="1200" height="56" fill="url(#hdr)"/>
+  <circle cx="30" cy="28" r="6" fill="#5BC0BE"/>
+  <text x="50" y="36" fill="#FFFFFF" font-size="19" font-weight="600">工业视觉分拣系统</text>
+  <text x="1120" y="35" fill="#CFE0F2" font-size="15" text-anchor="end">设备调试页</text>
+
+  <!-- 导航栏 -->
+  <rect x="0" y="56" width="1200" height="44" fill="#FFFFFF"/>
+  <rect x="20" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="79" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">主运行页</text>
+  <rect x="148" y="62" width="118" height="32" rx="6" fill="#2E6DB4"/>
+  <text x="207" y="83" fill="#FFFFFF" font-size="14" text-anchor="middle">设备调试</text>
+  <rect x="276" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="335" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">视觉配置</text>
+  <rect x="404" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="463" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">数据日志</text>
+  <rect x="532" y="62" width="118" height="32" rx="6" fill="#EDF1F5"/>
+  <text x="591" y="83" fill="#5A6B7C" font-size="14" text-anchor="middle">系统设置</text>
+  <line x1="0" y1="99" x2="1200" y2="99" stroke="#D8DEE4" stroke-width="1"/>
+
+  <!-- 左侧：传送带 Modbus 控制 -->
+  <rect x="20" y="112" width="520" height="540" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="40" y="141" fill="#1A2B3C" font-size="15" font-weight="600">传送带 Modbus 控制</text>
+
+  <rect x="40" y="154" width="150" height="34" rx="6" fill="#2E6DB4"/>
+  <text x="115" y="176" fill="#FFFFFF" font-size="13" text-anchor="middle">连接 Modbus</text>
+  <rect x="200" y="154" width="150" height="34" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="275" y="176" fill="#1A2B3C" font-size="13" text-anchor="middle">断开 Modbus</text>
+
+  <text x="40" y="230" fill="#1A2B3C" font-size="13" font-weight="600">运行控制</text>
+  <rect x="40" y="242" width="150" height="34" rx="6" fill="#2E9E5B"/>
+  <text x="115" y="264" fill="#FFFFFF" font-size="13" text-anchor="middle">正转</text>
+  <rect x="200" y="242" width="150" height="34" rx="6" fill="#D64545"/>
+  <text x="275" y="264" fill="#FFFFFF" font-size="13" text-anchor="middle">停止</text>
+
+  <text x="40" y="318" fill="#1A2B3C" font-size="13" font-weight="600">速度调节</text>
+  <rect x="120" y="312" width="300" height="6" rx="3" fill="#D8DEE4"/>
+  <rect x="120" y="312" width="150" height="6" rx="3" fill="#2E6DB4"/>
+  <circle cx="270" cy="315" r="10" fill="#FFFFFF" stroke="#2E6DB4" stroke-width="2.5"/>
+  <text x="438" y="320" fill="#1A2B3C" font-size="14" font-weight="600">40</text>
+  <text x="466" y="320" fill="#5A6B7C" font-size="12">mm/s</text>
+  <text x="40" y="352" fill="#5A6B7C" font-size="12">范围 0 ~ 100 mm/s</text>
+
+  <text x="40" y="398" fill="#1A2B3C" font-size="13" font-weight="600">通讯状态</text>
+  <circle cx="130" cy="393" r="5" fill="#2E9E5B"/>
+  <text x="145" y="398" fill="#1A2B3C" font-size="13">正常</text>
+  <text x="40" y="438" fill="#1A2B3C" font-size="13" font-weight="600">运行状态</text>
+  <circle cx="130" cy="433" r="5" fill="#2E9E5B"/>
+  <text x="145" y="438" fill="#1A2B3C" font-size="13">运行中</text>
+
+  <rect x="40" y="476" width="480" height="156" rx="8" fill="#F7F9FB"/>
+  <text x="60" y="502" fill="#1A2B3C" font-size="13" font-weight="600">寄存器映射（参考系统设置）</text>
+  <text x="60" y="532" fill="#5A6B7C" font-size="12">启停寄存器：Holding 40001（1=运行 0=停止）</text>
+  <text x="60" y="558" fill="#5A6B7C" font-size="12">速度寄存器：Holding 40002（0~100）</text>
+  <text x="60" y="584" fill="#5A6B7C" font-size="12">状态寄存器：Holding 40003（bit0 运行 / bit1 故障）</text>
+  <text x="60" y="610" fill="#5A6B7C" font-size="12">从站号：1 · IP：192.168.1.10 · 端口：502</text>
+
+  <!-- 右侧：机械臂控制 -->
+  <rect x="556" y="112" width="624" height="540" rx="10" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <text x="576" y="141" fill="#1A2B3C" font-size="15" font-weight="600">机械臂控制</text>
+
+  <rect x="576" y="154" width="118" height="34" rx="6" fill="#2E6DB4"/>
+  <text x="635" y="176" fill="#FFFFFF" font-size="13" text-anchor="middle">连接机械臂</text>
+  <rect x="704" y="154" width="118" height="34" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="763" y="176" fill="#1A2B3C" font-size="13" text-anchor="middle">断开连接</text>
+  <rect x="832" y="154" width="104" height="34" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="884" y="176" fill="#1A2B3C" font-size="13" text-anchor="middle">回零</text>
+  <rect x="946" y="154" width="104" height="34" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="998" y="176" fill="#1A2B3C" font-size="13" text-anchor="middle">消除报警</text>
+  <rect x="1060" y="154" width="104" height="34" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="1112" y="176" fill="#1A2B3C" font-size="13" text-anchor="middle">清空队列</text>
+
+  <text x="576" y="228" fill="#1A2B3C" font-size="13" font-weight="600">手动移动（JOG）</text>
+  <rect x="576" y="240" width="100" height="36" rx="6" fill="#2E6DB4"/>
+  <text x="626" y="263" fill="#FFFFFF" font-size="14" text-anchor="middle">X＋</text>
+  <rect x="686" y="240" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="736" y="263" fill="#1A2B3C" font-size="14" text-anchor="middle">X－</text>
+  <rect x="816" y="240" width="100" height="36" rx="6" fill="#2E6DB4"/>
+  <text x="866" y="263" fill="#FFFFFF" font-size="14" text-anchor="middle">Y＋</text>
+  <rect x="926" y="240" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="976" y="263" fill="#1A2B3C" font-size="14" text-anchor="middle">Y－</text>
+  <rect x="1056" y="240" width="100" height="36" rx="6" fill="#2E6DB4"/>
+  <text x="1106" y="263" fill="#FFFFFF" font-size="14" text-anchor="middle">Z＋</text>
+  <rect x="596" y="288" width="100" height="36" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="646" y="311" fill="#1A2B3C" font-size="14" text-anchor="middle">Z－</text>
+
+  <text x="576" y="360" fill="#1A2B3C" font-size="13" font-weight="600">目标坐标</text>
+  <text x="576" y="390" fill="#5A6B7C" font-size="12">目标X</text>
+  <rect x="620" y="376" width="90" height="26" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="665" y="393" fill="#1A2B3C" font-size="12" text-anchor="middle">120.0</text>
+  <text x="726" y="390" fill="#5A6B7C" font-size="12">目标Y</text>
+  <rect x="770" y="376" width="90" height="26" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="815" y="393" fill="#1A2B3C" font-size="12" text-anchor="middle">88.0</text>
+  <text x="876" y="390" fill="#5A6B7C" font-size="12">目标Z</text>
+  <rect x="920" y="376" width="90" height="26" rx="5" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="965" y="393" fill="#1A2B3C" font-size="12" text-anchor="middle">240.0</text>
+  <rect x="1030" y="374" width="134" height="30" rx="6" fill="#2E6DB4"/>
+  <text x="1097" y="394" fill="#FFFFFF" font-size="13" text-anchor="middle">定点运动</text>
+
+  <text x="576" y="440" fill="#1A2B3C" font-size="13" font-weight="600">当前坐标</text>
+  <text x="576" y="468" fill="#2E6DB4" font-size="14" font-weight="600">X 120.5</text>
+  <text x="700" y="468" fill="#2E6DB4" font-size="14" font-weight="600">Y 88.0</text>
+  <text x="824" y="468" fill="#2E6DB4" font-size="14" font-weight="600">Z 240.0</text>
+
+  <text x="576" y="508" fill="#1A2B3C" font-size="13" font-weight="600">执行器</text>
+  <rect x="636" y="494" width="110" height="30" rx="6" fill="#2E9E5B"/>
+  <text x="691" y="514" fill="#FFFFFF" font-size="13" text-anchor="middle">吸盘吸</text>
+  <rect x="756" y="494" width="110" height="30" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="811" y="514" fill="#1A2B3C" font-size="13" text-anchor="middle">吸盘放</text>
+
+  <text x="576" y="558" fill="#1A2B3C" font-size="13" font-weight="600">队列列表</text>
+  <rect x="576" y="570" width="300" height="66" rx="6" fill="#F7F9FB"/>
+  <text x="592" y="592" fill="#1A2B3C" font-size="12">1. (120.0, 88.0, 240.0)  吸取</text>
+  <text x="592" y="614" fill="#1A2B3C" font-size="12">2. (320.0, 88.0, 240.0)  放OK区</text>
+  <text x="592" y="636" fill="#1A2B3C" font-size="12">3. (520.0, 88.0, 240.0)  放NG区</text>
+  <rect x="892" y="570" width="120" height="30" rx="6" fill="#FFFFFF" stroke="#C4CFDA"/>
+  <text x="952" y="590" fill="#1A2B3C" font-size="13" text-anchor="middle">添加队列</text>
+  <rect x="1022" y="570" width="142" height="30" rx="6" fill="#2E6DB4"/>
+  <text x="1093" y="590" fill="#FFFFFF" font-size="13" text-anchor="middle">启动队列</text>
+
+  <!-- 底部报警信息框 -->
+  <rect x="20" y="668" width="1160" height="46" rx="8" fill="#FFFFFF" stroke="#D8DEE4"/>
+  <circle cx="48" cy="691" r="5" fill="#2E9E5B"/>
+  <text x="64" y="696" fill="#1A2B3C" font-size="13" font-weight="600">报警信息</text>
+  <text x="180" y="696" fill="#5A6B7C" font-size="12.5">当前无报警 · 最近记录：2026-09-15 14:32 机械臂 过载 已消除</text>
+
+  <!-- 底部状态栏 -->
+  <rect x="0" y="720" width="1200" height="40" fill="#1E3A5F"/>
+  <circle cx="28" cy="740" r="4" fill="#52E0A0"/>
+  <text x="42" y="745" fill="#AFC6DD" font-size="12">系统运行中</text>
+  <text x="196" y="745" fill="#AFC6DD" font-size="12">相机在线</text>
+  <text x="330" y="745" fill="#AFC6DD" font-size="12">机械臂空闲</text>
+  <text x="464" y="745" fill="#AFC6DD" font-size="12">传送带运行</text>
+  <text x="608" y="745" fill="#AFC6DD" font-size="12">IO 正常</text>
+  <text x="1120" y="745" fill="#AFC6DD" font-size="12" text-anchor="end">2026-09-15 15:00:00</text>
+</svg>
