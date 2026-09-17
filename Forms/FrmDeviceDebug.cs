@@ -282,8 +282,7 @@ namespace VisionProSortPlatform.Forms
             DobotController.ClearQueue();           // ← 同步清空机械臂内部队列
             button22.Enabled = false;
         }
-       
-        #endregion
 
+        #endregion
     }
 }

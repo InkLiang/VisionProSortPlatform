@@ -32,7 +32,50 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
+  <!-- ================= 新增：双平台版本（源码零修改） =================
+       x86  = 机械臂版（DobotDll 原生 DLL 为 32 位，必须 32 位进程）
+       x64  = 照相机版（Cognex VisionPro 程序集为 64 位，必须 64 位进程）
+       两者产物分别输出到 bin\x86\ 与 bin\x64\，互不影响，可同时存在。 -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- 照相机版（x64 / AnyCPU）才引用 VisionPro；机械臂版（x86）不引用，避免 32 位进程加载 64 位程序集 -->
+  <ItemGroup Condition=" '$(Platform)' == 'x64' Or '$(Platform)' == 'AnyCPU' ">
     <Reference Include="Cognex.FieldCalibrationApplication.Plugin, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\install\VisionPro\ReferencedAssemblies\Cognex.FieldCalibrationApplication.Plugin.dll</HintPath>
@@ -386,6 +429,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\install\VisionPro\ReferencedAssemblies\Cognex.VisionPro3D.Graphic.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <!-- NuGet 包与 .NET Framework 程序集：两个版本都需要 -->
+  <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -513,10 +559,26 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <!-- ================= 新增：x86（机械臂版）编译项调整 =================
+       移除依赖 Cognex VisionPro（仅 x64）的文件，改用无 VisionPro 依赖的
+       占位实现（Stubs\ 目录），保证 Form1 等源码零修改即可编译运行。 -->
+  <ItemGroup Condition=" '$(Platform)' == 'x86' ">
+    <Compile Remove="Forms\FrmMainRun.cs" />
+    <Compile Remove="Forms\FrmMainRun.Designer.cs" />
+    <Compile Remove="Forms\FrmVisionConfig.cs" />
+    <Compile Remove="Forms\FrmVisionConfig.Designer.cs" />
+    <Compile Remove="Services\CameraManager.cs" />
+    <EmbeddedResource Remove="Forms\FrmMainRun.resx" />
+    <EmbeddedResource Remove="Forms\FrmVisionConfig.resx" />
+    <Compile Include="Stubs\FrmMainRun.cs" />
+    <Compile Include="Stubs\FrmVisionConfig.cs" />
+    <Compile Include="Stubs\CameraManager.cs" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
+  <!-- 机械臂原生 DLL 均为 32 位：仅随 x86（机械臂版）输出 -->
+  <ItemGroup Condition=" '$(Platform)' == 'x86' ">
     <Content Include="DobotDll\DobotDll.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -537,4 +599,12 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- ================= 新增：x86（机械臂版）显式拷贝机械臂原生 DLL =================
+       VS 托管 targets 的内容复制存在增量误判，这里用显式 Copy 目标兜底，
+       保证 x86 版输出目录始终携带 DobotDll 及其依赖（均为 32 位，仅随 x86 版）。 -->
+  <Target Name="CopyDobotDlls" AfterTargets="Build" Condition=" '$(Platform)' == 'x86' ">
+    <Copy SourceFiles="DobotDll\DobotDll.dll;DobotDll\msvcp120.dll;DobotDll\msvcr120.dll;DobotDll\Qt5Core.dll;DobotDll\Qt5Network.dll;DobotDll\Qt5SerialPort.dll"
+          DestinationFolder="$(OutDir)"
+          SkipUnchangedFiles="true" />
+  </Target>
 </Project>

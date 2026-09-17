@@ -1,4 +1,5 @@
 using Cognex.VisionPro;
+using Cognex.VisionPro.ToolBlock;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,9 @@ namespace VisionProSortPlatform.Forms
 {
     public partial class FrmVisionConfig : UserControl
     {
-        // 是否单次拍照（拍完自动停止）
-        private bool isSingleShot = false;
+        //vpp路径
+        private static string VppPath;
+
 
         // 由 Form1 注入，指向主运行页的 cogRecordDisplay1，实现跨页预览
         public CogRecordDisplay TargetDisplay { get; private set; }
@@ -70,6 +72,7 @@ namespace VisionProSortPlatform.Forms
         }
 
         // ============ 相机 ============
+        //建立连接
         private void ConnectCamera()
         {
             if (CameraManager.Connect())
@@ -85,9 +88,10 @@ namespace VisionProSortPlatform.Forms
                 MessageBox.Show("相机连接失败：" + CameraManager.LastError, "提示",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            
         }
 
+        //断开连接
         private void DisconnectCamera()
         {
             CameraManager.Disconnect();
@@ -96,6 +100,7 @@ namespace VisionProSortPlatform.Forms
             MessageBox.Show("相机已断开");
         }
 
+        //实时预览
         private void StartPreview()
         {
             if (!CameraManager.IsConnected)
@@ -112,6 +117,7 @@ namespace VisionProSortPlatform.Forms
 
         }
 
+        //停止预览
         private void StopPreview()
         {
             (TargetDisplay ?? cogRecordDisplay2).StopLiveDisplay();
@@ -119,6 +125,7 @@ namespace VisionProSortPlatform.Forms
             button4.Enabled = false; 
         }
 
+        //单次拍照
         private void SingleShot()
         {
             if (!CameraManager.IsConnected)
@@ -135,18 +142,18 @@ namespace VisionProSortPlatform.Forms
                     cogRecordDisplay2.Image = img;   // 单次拍照结果显示
                 try
                 {
-                    object count = CameraManager.RunVpp(img);   // 2. 跑VPP检测
-                    MessageBox.Show("检测结果 Count = " + count); // 3. 弹窗看结果
+                    object count = CameraManager.RunVpp(img);   
+                    MessageBox.Show("检测结果 Count = " + count); 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("检测异常：" + ex.Message);   // 出问题能看到具体原因
+                    MessageBox.Show("检测异常：" + ex.Message);   
                 }
             });
-             
-            }
 
-        // ============ VPP方案 ============
+        }
+
+       // ============ VPP方案 ============
 
         private void LoadVpp()
         {
